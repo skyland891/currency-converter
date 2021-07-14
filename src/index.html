@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body class="page-inner">
+    <h1 class="page-inner__title">Currency Converter</h1>
+    <section class="main-window">
+        <div class="main-window__converter converter">
+            <input type="text" name="sum-in-rub" id="rub">
+            <input class = "converter__datalist" type="text" list="currency" name="currency">
+            <datalist id="currency">
+              <option value="AUD, Австралийский доллар"></option>
+              <option value="AZN, Азербайджанский манат"></option>
+              <option value="GBP, Фунт стерлингов Соединенного королевства"></option>
+              <option value="AMD, Армянских драмов"></option>
+              <option value="BYN, Белорусский рубль"></option>
+              <option value="BGN, Болгарский лев"></option>
+              <option value="BRL, Бразильский реал"></option>
+              <option value="HUF, Венгерских форинтов"></option>
+              <option value="HKD, Гонконгских долларов"></option>
+              <option value="DKK, Датская крона"></option>
+              <option value="USD, Доллар США"></option>
+              <option value="EUR, Евро"></option>
+              <option value="INR, Индийских рупий"></option>
+              <option value="KZT, Казахстанских тенге"></option>
+              <option value="CAD, Канадский доллар"></option>
+              <option value="KGS, Киргизских сомов"></option>
+              <option value="CNY, Китайский юань"></option>
+              <option value="MDL, Молдавских леев"></option>
+              <option value="NOK, Норвежских крон"></option>
+              <option value="PLN, Польский злотый"></option>
+              <option value="RON, Румынский лей"></option>
+              <option value="XDR, СДР (специальные права заимствования)"></option>
+              <option value="SGD, Сингапурский доллар"></option>
+              <option value="TJS, Таджикских сомони"></option>
+              <option value="TRY, Турецких лир"></option>
+              <option value="TMT, Новый туркменский манат"></option>
+              <option value="UZS, Узбекских сумов"></option>
+              <option value="UAH, Украинских гривен"></option>
+              <option value="CZK, Чешских крон"></option>
+              <option value="SEK, Шведских крон"></option>
+              <option value="CHF, Швейцарский франк"></option>
+              <option value="ZAR, Южноафриканских рэндов"></option>
+              <option value="KRW, Вон Республики Корея"></option>
+              <option value="JPY, Японских иен"></option>
+            </datalist>
+            <input type="text" name="sum-in-currency" id="sum-in-currency" readonly>
+        </div>
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
