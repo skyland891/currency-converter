@@ -11,47 +11,19 @@
     <h1 class="page-inner__title">Currency Converter</h1>
     <section class="main-window">
         <div class="main-window__converter converter">
+            <label for="sum-in-rub">Сумма, руб.</label>
             <input type="text" name="sum-in-rub" id="rub">
-            <input class = "converter__datalist" type="text" list="currency" name="currency">
-            <datalist id="currency">
-              <option value="AUD, Австралийский доллар"></option>
-              <option value="AZN, Азербайджанский манат"></option>
-              <option value="GBP, Фунт стерлингов Соединенного королевства"></option>
-              <option value="AMD, Армянских драмов"></option>
-              <option value="BYN, Белорусский рубль"></option>
-              <option value="BGN, Болгарский лев"></option>
-              <option value="BRL, Бразильский реал"></option>
-              <option value="HUF, Венгерских форинтов"></option>
-              <option value="HKD, Гонконгских долларов"></option>
-              <option value="DKK, Датская крона"></option>
-              <option value="USD, Доллар США"></option>
-              <option value="EUR, Евро"></option>
-              <option value="INR, Индийских рупий"></option>
-              <option value="KZT, Казахстанских тенге"></option>
-              <option value="CAD, Канадский доллар"></option>
-              <option value="KGS, Киргизских сомов"></option>
-              <option value="CNY, Китайский юань"></option>
-              <option value="MDL, Молдавских леев"></option>
-              <option value="NOK, Норвежских крон"></option>
-              <option value="PLN, Польский злотый"></option>
-              <option value="RON, Румынский лей"></option>
-              <option value="XDR, СДР (специальные права заимствования)"></option>
-              <option value="SGD, Сингапурский доллар"></option>
-              <option value="TJS, Таджикских сомони"></option>
-              <option value="TRY, Турецких лир"></option>
-              <option value="TMT, Новый туркменский манат"></option>
-              <option value="UZS, Узбекских сумов"></option>
-              <option value="UAH, Украинских гривен"></option>
-              <option value="CZK, Чешских крон"></option>
-              <option value="SEK, Шведских крон"></option>
-              <option value="CHF, Швейцарский франк"></option>
-              <option value="ZAR, Южноафриканских рэндов"></option>
-              <option value="KRW, Вон Республики Корея"></option>
-              <option value="JPY, Японских иен"></option>
-            </datalist>
+            <select id="currency-list">
+            </select>
+            <label for="sum-in-currency">Сумма в валюте</label>
             <input type="text" name="sum-in-currency" id="sum-in-currency" readonly>
         </div>
     </section>
+    <form class="page-inner__form">
+        <label for="mail">Записаться на обмен валюты</label>
+        <input type="text" class="page-inner__mail" placeholder="Введите адрес электронной почты" name="mail" id="mail">
+        <button type="submit" id = "submit-button">Записаться</button>
+    </form>
     <script src="./index.js"></script>
 </body>
 </html>
