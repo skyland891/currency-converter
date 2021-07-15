@@ -2,11 +2,69 @@
 let currencySum = document.getElementById("sum-in-currency");
 let rubSum = document.getElementById("rub");
 let currencyList = document.getElementById("currency-list");
-let mail = document.getElementById("mail");
-let submitButton = document.getElementById("submit-button");
+let form = document.querySelector(".page-inner__form");
 //функция, возвращающая значение суммы в валюте
 function recountCurrencySum(value, currency) {
-    return value*currency["Nominal"] / currency["Value"];
+    return (value*currency["Nominal"] / currency["Value"]).toFixed(2);
+}
+//функиция, проверяющая правильность заполнения полей формы
+function formValidate () {
+    let mail = document.getElementById("mail"); //поле для ввода почты
+    let error = 0;
+
+    removeError(mail); //предварительно удалем стили неудачного ввода
+    removeError(rubSum);
+
+    if(!mailTest(mail.value)){
+        addError(mail);
+        error++;
+    }
+    
+    if(rubSum.value === "") {
+        addError(rubSum);
+        error++;
+    }
+
+    return error;
+}
+//валидатор почты
+function mailTest(mail) {
+    let regMail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i; 
+    return  regMail.test(mail);
+}
+//функция для добавления стилей неудачного ввода 
+function addError(input) {
+    input.classList.add('_error');
+}
+//функция для удаления стилей неудачного ввода
+function removeError(input) {
+    input.classList.remove('_error');
+}
+//функция отправки формы
+async function sendForm(e){
+    e.preventDefault();
+    if(!formValidate()){
+        //сбор всех введеных данных
+        let formData = new FormData(e.target);
+
+        let response = await fetch('sendmail.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if(response.ok) {
+            let postResult = await response.json();
+            alert(postResult.message);
+            form.reset();//сброс введенных данных
+        }
+        else {
+            alert('Ошибка');
+        }
+    }
+    else {
+        //предупреждение о некорректно введенных данных
+        alert('Поля заполнены некорректно!');
+    }
 }
 //GET-запрос для получения данных 
 let currencyURL = "https://www.cbr-xml-daily.ru/daily_json.js";
@@ -45,17 +103,7 @@ let currencyRequest = fetch(currencyURL)
         currencySum.value = recountCurrencySum(+rubSum.value, courseData[e.target.selectedOptions[0].dataset.value])
     });
 
-    //валидация поля почты
-    let regMail = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-    submitButton.addEventListener("submit", (e) => {
-        e.preventDefault();
+    //обработчик события отправки формы
+    form.addEventListener("submit", sendForm);
 
-        if(regMail.test(mail.value)){
-            //отправка письма
-        }
-        else {
-            //предупреждение о некорректно введеном адресе почты 
-        }
-    });
-
-}))
+}));
