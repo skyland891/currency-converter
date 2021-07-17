@@ -1,0 +1,53 @@
+.converter {
+    position: relative;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.converter__rub {
+    color: white;
+    position: absolute;
+    left: 0;
+    top: -30px;
+    font-size: 20px;
+
+    @media (max-width: 320px) {
+        font-size: 12px;
+    }
+
+    @media (min-width: 321px)and(max-width: 768px) {
+        top: -25px;
+        font-size: 15px;
+    }
+}
+
+.converter__currency {
+    color: white;
+    position: absolute;
+    right: 0;
+    top: -30px;
+    font-size: 20px;
+
+    @media (min-width: 321px)and(max-width: 768px) {
+        top: -25px;
+        font-size: 15px;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 12px;
+    }
+}
+
+.converter__currency-list {
+    width: 33%;
+}
+
+#rub {
+    width: 33%;
+}
+
+#sum-in-currency {
+    width: 33%;
+}

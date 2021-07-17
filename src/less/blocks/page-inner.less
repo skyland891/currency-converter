@@ -1,0 +1,57 @@
+.page-inner {
+    background-color: #2e2e2e;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.page-inner__title {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    @media (max-width: 320px) {
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+}
+
+.page-inner__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-inner__registration {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+
+    @media (max-width: 320px) {
+        font-size: 15px;
+    }
+
+    @media (min-width: 321px)and(max-width: 768px) {
+        top: -25px;
+        font-size: 18px;
+    }
+}
+
+.page-inner__mail {
+    width: 300px;
+    height: 30px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.page-inner__button {
+    border: 1.24px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 35px;
+    font-size: 1rem;
+    padding: 0;
+    width: 150px;
+}
