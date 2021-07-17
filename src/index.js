@@ -51,7 +51,7 @@ async function sendForm(e){
             method: 'POST',
             body: formData
         });
-        
+
         if(response.ok) {
             let postResult = await response.json();
             alert(postResult.message);
@@ -86,7 +86,7 @@ let currencyRequest = fetch(currencyURL)
     //заполнение объекта courseData
     for(let key in valutes) {
         courseData[key] = valutes[key];
-    };
+    }
     //обработчик события ввода для поля "Сумма в руб."
     rubSum.addEventListener("input", (e) => {
         currencySum.value = recountCurrencySum(+e.target.value, courseData[currencyList.selectedOptions[0].dataset.value]);
@@ -104,6 +104,8 @@ let currencyRequest = fetch(currencyURL)
     });
 
     //обработчик события отправки формы
-    form.addEventListener("submit", sendForm);
+    form.addEventListener("submit", (e) => {
+        sendForm(e);
+        });
 
 }));
